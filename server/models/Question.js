@@ -1,0 +1,1 @@
+const mongoose = require('mongoose');\n\nconst questionSchema = new mongoose.Schema({\n  text: String,\n  category: String,\n  difficulty: String,\n  tags: [String],\n  answers: [{\n    text: String,\n    correct: Boolean\n  }],\n});\n\nconst Question = mongoose.model('Question', questionSchema);\n\nmodule.exports = {\n  Question,\n};
